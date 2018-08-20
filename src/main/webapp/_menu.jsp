@@ -21,5 +21,5 @@
    <a href="/configTenant">Configure Tenant</a>
    |  -->
    ||
-   <a href=<%=request.getContextPath() %>"/profileView.jsp">My Account Info</a>
+   <a href=<%=request.getContextPath() %>/profileView.jsp>My Account Info</a>
 </div>
