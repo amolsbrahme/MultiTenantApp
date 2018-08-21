@@ -1,0 +1,139 @@
+version: 1
+
+dn: ou=clients,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: clients
+
+dn: ou=TNT1,ou=clients,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: TNT1
+
+dn: ou=users,ou=TNT1,ou=clients,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: users
+
+dn: ou=roles,ou=TNT1,ou=clients,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: roles
+
+dn: ou=groups,ou=TNT1,ou=clients,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: uid=admin@tenant1.com,ou=users,ou=TNT1,ou=clients,dc=example,dc=com
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: admin
+sn: test
+uid: admin@tenant1.com
+
+dn: uid=manager@tenant1.com,ou=users,ou=TNT1,ou=clients,dc=example,dc=com
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: manager
+sn: test
+uid: manager@tenant1.com
+
+dn: uid=user@tenant1.com,ou=users,ou=TNT1,ou=clients,dc=example,dc=com
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: user
+sn: test
+uid: user@tenant1.com
+
+dn: cn=admin,ou=roles,ou=TNT1,ou=clients,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: admin
+member: uid=admin@tenant1.com,ou=users,ou=TNT1,ou=clients,dc=example,dc=com
+
+dn: cn=manager,ou=roles,ou=TNT1,ou=clients,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: manager
+member: uid=manager@tenant1.com,ou=users,ou=TNT1,ou=clients,dc=example,dc=co
+ m
+
+dn: cn=user,ou=roles,ou=TNT1,ou=clients,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: user
+member: uid=user@tenant1.com,ou=users,ou=TNT1,ou=clients,dc=example,dc=com
+
+dn: ou=TNT2,ou=clients,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: TNT2
+
+dn: ou=users,ou=TNT2,ou=clients,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: users
+
+dn: ou=roles,ou=TNT2,ou=clients,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: roles
+
+dn: ou=groups,ou=TNT2,ou=clients,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: uid=admin@tenant2.com,ou=users,ou=TNT2,ou=clients,dc=example,dc=com
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: admin
+sn: test
+uid: admin@tenant2.com
+
+dn: uid=manager@tenant2.com,ou=users,ou=TNT2,ou=clients,dc=example,dc=com
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: manager
+sn: test
+uid: manager@tenant2.com
+
+dn: uid=user@tenant2.com,ou=users,ou=TNT2,ou=clients,dc=example,dc=com
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: user
+sn: test
+uid: user@tenant2.com
+
+dn: cn=admin,ou=roles,ou=TNT2,ou=clients,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: admin
+member: uid=admin@tenant2.com,ou=users,ou=TNT2,ou=clients,dc=example,dc=com
+
+dn: cn=manager,ou=roles,ou=TNT2,ou=clients,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: manager
+member: uid=manager@tenant2.com,ou=users,ou=TNT2,ou=clients,dc=example,dc=co
+ m
+
+dn: cn=user,ou=roles,ou=TNT2,ou=clients,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: user
+member: uid=user@tenant2.com,ou=users,ou=TNT2,ou=clients,dc=example,dc=com
+
