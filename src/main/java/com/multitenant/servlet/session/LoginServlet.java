@@ -1,4 +1,4 @@
-package com.journaldev.servlet.session;
+package com.multitenant.servlet.session;
 
 import java.io.IOException;
 import java.io.PrintWriter;

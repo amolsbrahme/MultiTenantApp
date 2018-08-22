@@ -55,7 +55,7 @@ public class AuthorizationFilter implements Filter {
 			String emailDomain = userName.substring(index+1);
 			Tenant tenant = tenantManager.getTenantByEmailDomain(emailDomain);
 			AuthenticationService authSvc = AuthenticationManager
-					.getAuthenticationService(userName);
+					.getAuthenticationService(tenant);
 			
 			AuthenticationResponse authResult = authSvc.authenticate(tenant, userName, password);
 			

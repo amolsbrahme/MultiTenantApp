@@ -60,9 +60,6 @@ public class LDAPUserManager implements UserManager {
 			String lookup = "(uid="+userName+")";
 			
 			SearchRequest searchRequest = new SearchRequest(baseDN, SearchScope.SUB, lookup);
-
-			
-			
 		    SearchResult sr = conn.search(searchRequest);
 
 		    if (sr.getEntryCount() == 0) {
@@ -83,11 +80,10 @@ public class LDAPUserManager implements UserManager {
 		    user.setTenantID(tenant.getTenantID());
 		    user.setUserName(userName);
 		    user.setEmail(userName);
-		    user.setGroup(getUserGroup(conn, userName));
+		    user.setGroup(getUserGroup(conn, tenant, userName));
 		    
 	    
 		} catch (LDAPException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			conn.close();
@@ -95,12 +91,11 @@ public class LDAPUserManager implements UserManager {
 		return user;
 	}
 
-	private String getUserGroup(LDAPConnection conn, String userName) throws LDAPException {
-		String baseDN = "ou=roles,ou="+"TNT1"+",ou=clients,dc=example,dc=com";
-		String lookupFilter = "(member=uid=admin@tenant1.com,ou=users,ou=TNT1,ou=clients,dc=example,dc=com)";
+	private String getUserGroup(LDAPConnection conn, Tenant tenant, String userName) throws LDAPException {
+		String baseDN = "ou=roles,ou="+tenant.getTenantAbbrev()+",ou=clients,dc=example,dc=com";
+		String lookupFilter = "(member=uid="+userName+",ou=users,ou="+tenant.getTenantAbbrev()+",ou=clients,dc=example,dc=com)";
 		
 		SearchRequest searchRequest = new SearchRequest(baseDN, SearchScope.SUB, lookupFilter);
-		
 	    SearchResult sr = conn.search(searchRequest);
 
 	    if (sr.getEntryCount() == 0) {
